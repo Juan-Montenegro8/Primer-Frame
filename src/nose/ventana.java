@@ -1,13 +1,13 @@
 package nose;
 import java.awt.*;
-import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.*;
 public class ventana extends JFrame{
-    private JPanel p;
+    private JPanel panel;
     private JLabel saludo;
     private JButton boton;
-    private JTextField tex;
+    private JTextField texto;
 
     public ventana() {
         setBounds(50,50,500,500);
@@ -22,35 +22,35 @@ public class ventana extends JFrame{
         cBoton();
     }
     private void cPanel(){
-        p= new JPanel();
-        p.setLayout(null);
-        this.add(p);
+        panel= new JPanel();
+        panel.setLayout(null);
+        this.add(panel);
     }
     private void cEtiquita(){
         JLabel eti=new JLabel("ingrese dato");
         eti.setBounds(30, 10, 200, 30);
         eti.setFont(new Font("cooper black",0,15));
-        p.add(eti);
+        panel.add(eti);
     }
     private void cTexto(){
-        tex= new JTextField();
-        tex.setBounds(30, 40, 300, 30);
-        p.add(tex);
+        texto= new JTextField();
+        texto.setBounds(30, 40, 300, 30);
+        panel.add(texto);
     }
     private void cBoton(){
         boton=new JButton("culo");
         boton.setBounds(150, 100, 150, 40);
         boton.setFont(new Font("arial",0,15));
-        p.add(boton);
+        panel.add(boton);
        
         
         saludo= new JLabel();
         saludo.setBounds(50, 200, 300, 40);
         saludo.setFont(new Font("arial",0,20));
-        p.add(saludo);
+        panel.add(saludo);
         
         ActionListener oo=(ActionEvent ae) -> {
-            saludo.setText("mañana hay clase "+ tex.getText());
+            saludo.setText("mañana hay clase "+ texto.getText());
         };
         boton.addActionListener(oo);
     }
